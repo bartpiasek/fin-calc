@@ -4,6 +4,7 @@ import "bootstrap/dist/css/bootstrap.min.css";
 import Layout from "./components/Layout/Layout";
 import Navbar from "./components/Navigation/Navbar";
 import Calc from "./components/Calc/Calc";
+import NettoCashFlow from "./components/Financial/NettoCashFlow";
 
 function App() {
   return (
@@ -12,7 +13,8 @@ function App() {
         <Navbar />
         <Switch>
           <Route path="/" component={Layout} />
-          <Route path="/calc" component={Calc} />
+          {/* <Route path="/calc" component={Calc} />
+          <Route path="/fin" component={NettoCashFlow} /> */}
         </Switch>
       </Router>
     </div>

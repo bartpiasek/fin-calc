@@ -1,5 +1,6 @@
 import React from "react";
 import Calc from "../Calc/Calc";
+import NettoCashFlow from "../Financial/NettoCashFlow";
 import Container from "react-bootstrap/Container";
 import Row from "react-bootstrap/Row";
 import Col from "react-bootstrap/Col";
@@ -13,7 +14,9 @@ function Layout() {
         </Col>
       </Row>
       <Row>
-        <Col></Col>
+        <Col>
+          <NettoCashFlow />
+        </Col>
       </Row>
       <Row>
         <Col></Col>

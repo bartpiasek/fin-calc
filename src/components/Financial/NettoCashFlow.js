@@ -29,7 +29,7 @@ function NettoCashFlow() {
         ></input>
       </form>
 
-      <p>{taxShield}</p>
+      <p role="alert">Tarcza podatkowa: {taxShield}</p>
       <hr />
       <h5>NCF - Netto Cash Flow</h5>
       <form>

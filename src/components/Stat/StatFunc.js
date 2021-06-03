@@ -1,9 +1,9 @@
 import React, { useState } from "react";
 
 function StatFunc() {
-  const [meanArray, setMeanArray] = useState(0);
-  const [medianArray, setMedianArray] = useState(0);
-  const [modeArray, setModeArray] = useState(0);
+  const [meanArray, setMeanArray] = useState("");
+  const [medianArray, setMedianArray] = useState("");
+  const [modeArray, setModeArray] = useState("");
 
   function mean(arr) {
     let sum = 0;
@@ -39,23 +39,37 @@ function StatFunc() {
         modes.push(Number(key));
       }
     }
-    if (modes.length === Object.keys(freqTable).length) modes = [];
+    if (modes.length === Object.values(freqTable).length) modes = [];
     return modes;
   }
+
+  const meanArraySplit = meanArray.toString().split(",").map(Number);
+  console.log(meanArraySplit);
+  const medianArraySplit = medianArray.toString().split(",").map(Number);
+  const modeArraySplit = modeArray.toString().split(",").map(Number);
 
   return (
     <div>
       <hr />
       <form>
         <h5>Średnia arytmetyczna</h5>
-        <input onChange={(e) => setMeanArray(e.target.value)}></input>
-        <p>{mean(meanArray)}</p>
+        <input
+          name="mean"
+          onChange={(e) => setMeanArray(e.target.value)}
+        ></input>
+        <p>{mean(meanArraySplit)}</p>
         <h5>Mediana</h5>
-        <input onChange={(e) => setMedianArray(e.target.value)}></input>
-        <p>{median(medianArray)}</p>
+        <input
+          name="median"
+          onChange={(e) => setMedianArray(e.target.value)}
+        ></input>
+        <p>{median(medianArraySplit)}</p>
         <h5>Modalna</h5>
-        <input onChange={(e) => setModeArray(e.target.value)}></input>
-        <p>{mode(modeArray)}</p>
+        <input
+          name="mode"
+          onChange={(e) => setModeArray(e.target.value)}
+        ></input>
+        <p>{mode(modeArraySplit)}</p>
       </form>
     </div>
   );

@@ -10,9 +10,7 @@ function Layout() {
   return (
     <Container>
       <Row>
-        <Col>
-          <Calc />
-        </Col>
+        <Col></Col>
       </Row>
       <Row>
         <Col>

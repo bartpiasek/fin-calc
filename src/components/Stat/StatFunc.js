@@ -54,10 +54,12 @@ function StatFunc() {
       <form>
         <h5>Średnia arytmetyczna</h5>
         <input
+          role="form"
+          label="mean"
           name="mean"
           onChange={(e) => setMeanArray(e.target.value)}
         ></input>
-        <p>{mean(meanArraySplit)}</p>
+        <p placeholder="mean-output">{mean(meanArraySplit)}</p>
         <h5>Mediana</h5>
         <input
           name="median"

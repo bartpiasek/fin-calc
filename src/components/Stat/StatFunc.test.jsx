@@ -11,13 +11,15 @@ describe("Stat component", () => {
   test("Update input and count mean", () => {
     render(<StatFunc />);
     // Make sure mean,median,mode starts out at 0
-    const meanInput = screen.getByRole("input", { name: "mean" });
-    expect(meanInput).toBeNull();
+    const meanInput = screen.getByRole("form", { label: "mean" });
+    expect(meanInput);
 
-    userEvent.type(meanInput, {
-      target: { value: "25,17,40,63,32,54,70,54" },
-    });
-    expect(meanInput).toBe("44.375");
+    //Make sure mean output in parapgrah = 0
+    const meanOutput = screen.getAllByPlaceholderText("mean-output");
+
+    userEvent.type(meanInput, "25,17,40,63,32,54,70,54");
+    // expect(meanInput).toHaveDisplayValue("44.375");
+    expect(meanOutput).toHaveTextContent("44.375");
   });
 
   //   test("Update input and count median", () => {

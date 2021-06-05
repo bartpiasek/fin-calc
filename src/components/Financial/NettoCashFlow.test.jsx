@@ -7,19 +7,18 @@ describe("NCF component", () => {
     render(<NettoCashFlow />);
 
     // Make sure interest starts out at 0
-    const interestInput = screen.getByRole("input", { name: "interest" });
+    const interestInput = screen.getByRole("interest-input");
     expect(interestInput);
     // Make sure tax rate starts out at 0
-    const taxRateInput = screen.getByRole("input", { name: "taxrate" });
+    const taxRateInput = screen.getByRole("taxrate-input");
     expect(taxRateInput);
 
     // Update interest to 50 and tax rate to 20 - check taxShield
-    const taxShield = screen.getByRole("paragraph", { name: "taxshield" });
+    const taxShield = screen.getByRole("taxshield-output");
 
     userEvent.type(interestInput, "50");
     userEvent.type(taxRateInput, "20");
 
-    // expect(taxShield).toHaveDisplayValue("-10");
     expect(taxShield).toHaveTextContent("-10");
   });
 
@@ -27,5 +26,15 @@ describe("NCF component", () => {
     // const NettoCashFlow = screen.getByRole("cell", )
     // Update taxrate to 20, interest to 5000
     // expect(NettoCashFlow).toHaveTextContent("")
+    // Data: przepływ z działalności operacyjnej = +1500
+    // przepływ z działalności inwestycyjnej = -300
+    // odsetki = 50
+    // stopa = 20%
+    // NCF = 1190
+    const operationCashFlow = screen.getByRole("operationcashflow-input");
+    const investCashFlow = screen.getByRole("investcashflow-input");
+    const nettoCashFlowOutput = screen.getByRole("nettocashflow-output");
+    // Make sure operationCashFlow starts out at 0
+    // Make sure investCashFlow starts out at 0
   });
 });

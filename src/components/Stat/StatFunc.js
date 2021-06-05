@@ -52,26 +52,27 @@ function StatFunc() {
     <div>
       <hr />
       <form>
-        <h5>Średnia arytmetyczna</h5>
+        <h5>Średnia arytmetyczna [Mean]</h5>
         <input
-          role="form"
-          label="mean"
+          role="mean-input"
           name="mean"
           onChange={(e) => setMeanArray(e.target.value)}
         ></input>
         <p placeholder="mean-output">{mean(meanArraySplit)}</p>
-        <h5>Mediana</h5>
+        <h5>Mediana [Median]</h5>
         <input
+          role="median-input"
           name="median"
           onChange={(e) => setMedianArray(e.target.value)}
         ></input>
-        <p>{median(medianArraySplit)}</p>
-        <h5>Modalna</h5>
+        <p placeholder="median-output">{median(medianArraySplit)}</p>
+        <h5>Modalna [Mode]</h5>
         <input
+          role="mode-input"
           name="mode"
           onChange={(e) => setModeArray(e.target.value)}
         ></input>
-        <p>{mode(modeArraySplit)}</p>
+        <p placeholder="mode-output">{mode(modeArraySplit)}</p>
       </form>
     </div>
   );

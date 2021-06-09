@@ -23,28 +23,29 @@ function StatFunc() {
   }
 
   function mode(arr) {
-    const freqTable = {};
-    Object.values(arr).forEach(
-      ((element) => freqTable[element] - freqTable[element] + 1) || 1
-    );
+    var modes = [],
+      count = [],
+      i,
+      number,
+      maxIndex = 0;
 
-    let modes = [];
-    let maxFreq = 0;
-
-    for (const key in freqTable) {
-      if (freqTable[key] > maxFreq) {
-        modes = [Number(key)];
-        maxFreq = freqTable[key];
-      } else if (freqTable[key] === maxFreq) {
-        modes.push(Number(key));
+    for (i = 0; i < arr.length; i++) {
+      number = arr[i];
+      count[number] = (count[number] || 0) + 1;
+      if (count[number] > maxIndex) {
+        maxIndex = count[number];
       }
     }
-    if (modes.length === Object.values(freqTable).length) modes = [];
+    for (i in count)
+      if (count.hasOwnProperty(i)) {
+        if (count[i] === maxIndex) {
+          modes.push(Number(i));
+        }
+      }
     return modes;
   }
 
   const meanArraySplit = meanArray.toString().split(",").map(Number);
-  console.log(meanArraySplit);
   const medianArraySplit = medianArray.toString().split(",").map(Number);
   const modeArraySplit = modeArray.toString().split(",").map(Number);
 

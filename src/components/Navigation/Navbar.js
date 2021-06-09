@@ -20,6 +20,7 @@ function Navbar() {
         <Button variant="flat">Rate</Button>
         <Button variant="flat">Reset</Button>
       </Nav>
+      <hr />
     </NavbarBootstrap>
   );
 }

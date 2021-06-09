@@ -8,7 +8,6 @@ import StatFunc from "../Stat/StatFunc";
 // Mode:25,54
 
 describe("Stat component", () => {
-  // afterEach(cleanup);
   test("Update input and count mean", () => {
     render(<StatFunc />);
 

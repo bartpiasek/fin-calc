@@ -30,7 +30,7 @@ function NettoCashFlow() {
           onChange={(e) => setTaxRate(e.target.value)}
         ></input>
         <p role="taxshield-output" name="taxshield">
-          Tarcza podatkowa: {taxShield}
+          Tarcza podatkowa: {taxShield} PLN
         </p>
       </form>
       <hr />
@@ -46,7 +46,7 @@ function NettoCashFlow() {
           placeholder="przepływ z działalności inwestycyjnej"
           onChange={(e) => setInvestCashFlow(e.target.value)}
         ></input>
-        <p role="nettocashflow-output">NCF: {NettoCashFlow}</p>
+        <p role="nettocashflow-output">NCF: {NettoCashFlow} PLN</p>
       </form>
     </div>
   );

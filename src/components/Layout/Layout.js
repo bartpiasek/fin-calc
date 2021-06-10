@@ -5,7 +5,8 @@ import StatFunc from "../Stat/StatFunc";
 import Container from "react-bootstrap/Container";
 import Row from "react-bootstrap/Row";
 import Col from "react-bootstrap/Col";
-import Investments from "../Financial/Investments";
+import PresentValue from "../Financial/PresentValue";
+import FutureValue from "../Financial/FutureValue";
 
 function Layout() {
   return (
@@ -25,7 +26,12 @@ function Layout() {
       </Row>
       <Row>
         <Col>
-          <Investments />
+          <PresentValue />
+        </Col>
+      </Row>
+      <Row>
+        <Col>
+          <FutureValue />
         </Col>
       </Row>
     </Container>
